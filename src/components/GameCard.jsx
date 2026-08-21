@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import getPokemonDetails from '../pokemonDetails';
 
-function GameCard ({name}) {
+function GameCard ({name, dataKey}) {
     const [pokemon, setPokemon] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -10,8 +10,8 @@ function GameCard ({name}) {
             setIsLoading(true);
 
             try {
-                const response = await getPokemonDetails(name);
-                setPokemon(response.json());
+                const data = await getPokemonDetails(name);
+                setPokemon(data);
             } catch (error) {
                 throw new Error(`${error}`);
             } finally {
@@ -33,7 +33,7 @@ function GameCard ({name}) {
     }
 
     return (
-        <div className="card">
+        <div className="card" data-key={dataKey}>
             <img src={pokemon.sprite} alt={`Picture of ${name}`} className="pokemonImage" />
             <p className="pokemonName">{pokemon.name}</p>
         </div>

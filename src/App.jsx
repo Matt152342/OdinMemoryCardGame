@@ -3,7 +3,7 @@ import GameBoard from './components/GameBoard';
 import './App.css';
 
 const pokemon = [
-    "pikachu",
+    "gardevoir",
     "charizard",
     "mewtwo",
     "gengar",
@@ -15,7 +15,9 @@ function App() {
 
   return (
     <>
-      
+      <GameBoard
+        pokemonList={pokemon}
+      />
     </>
   )
 }

@@ -1,8 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import GameBoard from './components/GameBoard';
+import './App.css';
+
+const pokemon = [
+    "pikachu",
+    "charizard",
+    "mewtwo",
+    "gengar",
+    "greninja",
+    "snorlax",
+]
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

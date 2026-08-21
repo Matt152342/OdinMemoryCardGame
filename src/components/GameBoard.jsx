@@ -1,20 +1,11 @@
 import { useEffect } from "react";  
 import GameCard from "./GameCard";
 
-const pokemon = [
-    "pikachu",
-    "charizard",
-    "mewtwo",
-    "gengar",
-    "greninja",
-    "snorlax",
-]
-
-function GameBoard() {
+function GameBoard({pokemonList}) {
 
     return (
         <div>
-            {pokemon.map((name) => {
+            {pokemonList.map((name) => {
                 return <GameCard
                     name={name}
                     key={name}

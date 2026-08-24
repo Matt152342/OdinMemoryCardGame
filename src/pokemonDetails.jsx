@@ -10,7 +10,7 @@ async function getPokemonDetails(name) {
         const pokemonData = await response.json();
 
         const pokemonDetails = {
-            name: pokemonData.name,
+            name: pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1),
             type: pokemonData.types[0].type.name,
             sprite: pokemonData.sprites.front_default,
         }

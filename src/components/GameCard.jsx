@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import getPokemonDetails from '../pokemonDetails';
+import '../styles/gameCard.css';
 
-function GameCard ({name, dataKey}) {
+function GameCard ({name, dataKey, onClick}) {
     const [pokemon, setPokemon] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -33,7 +34,7 @@ function GameCard ({name, dataKey}) {
     }
 
     return (
-        <div className="card" data-key={dataKey}>
+        <div className="card" data-key={dataKey} draggable={false} onDragStart={e => e.preventDefault()} onClick={onClick}>
             <img src={pokemon.sprite} alt={`Picture of ${name}`} className="pokemonImage" />
             <p className="pokemonName">{pokemon.name}</p>
         </div>

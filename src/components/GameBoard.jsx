@@ -1,14 +1,15 @@
-import { useEffect } from "react";  
 import GameCard from "./GameCard";
+import '../styles/gameBoard.css';
 
-function GameBoard({pokemonList}) {
+function GameBoard({pokemonList, cardClick}) {
 
     return (
-        <div>
+        <div className="gameBoard">
             {pokemonList.map((name) => {
                 return <GameCard
                     name={name}
                     key={name}
+                    onClick={cardClick}
                 />
             })}
         </div>

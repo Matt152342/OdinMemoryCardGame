@@ -32,7 +32,7 @@ function App() {
   }
 
   function handleCardClick(cardName) {
-    if (clickedCards.includes(cardName) || count >= 12) {
+    if (clickedCards.includes(cardName) || count === 12) {
       setHighScore(count);
       setCount(0);
       setClickedCards([]);

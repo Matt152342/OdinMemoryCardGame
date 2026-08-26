@@ -20,15 +20,18 @@ const pokemon = [
 function App() {
   const [count, setCount] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [clickedCards, setClickedCards] = useState([]);
 
-  function handleCardClick (e) {
-    setCount(count + 1)
-
-    if (count === 12) {
-      setHighScore(count)
+  function handleCardClick (cardName) {
+    if (clickedCards.includes(cardName) || count >= 12) {
+      setHighScore(count);
       setCount(0);
+      setClickedCards([]);
+      return;
     }
 
+    setCount(count + 1);
+    setClickedCards([...clickedCards, cardName]);
     return;
   }
 

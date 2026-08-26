@@ -22,16 +22,27 @@ function App() {
   const [highScore, setHighScore] = useState(0);
   const [clickedCards, setClickedCards] = useState([]);
 
-  function handleCardClick (cardName) {
+  function shufflePokemon() {
+    const copy = pokemon;
+
+    for (let i = pokemon.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+  }
+
+  function handleCardClick(cardName) {
     if (clickedCards.includes(cardName) || count >= 12) {
       setHighScore(count);
       setCount(0);
       setClickedCards([]);
+      shufflePokemon();
       return;
     }
 
     setCount(count + 1);
     setClickedCards([...clickedCards, cardName]);
+    shufflePokemon();
     return;
   }
 

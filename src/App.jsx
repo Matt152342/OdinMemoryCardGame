@@ -48,8 +48,10 @@ function App() {
 
   return (
     <main>
-      <h2>Count: {count}</h2>
-      <h2>HighScore: {highScore}</h2>
+      <div className="scoreHeader">
+        <h2>Count: {count}</h2>
+        <h2>High Score: {highScore}</h2>
+      </div>
         
       <GameBoard
         pokemonList={pokemon}

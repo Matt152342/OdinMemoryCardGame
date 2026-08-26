@@ -9,7 +9,7 @@ function GameBoard({pokemonList, cardClick}) {
                 return <GameCard
                     name={name}
                     key={name}
-                    onClick={cardClick}
+                    onClick={() => cardClick(name)}
                 />
             })}
         </div>

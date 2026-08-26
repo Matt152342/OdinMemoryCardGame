@@ -1,8 +1,20 @@
 .gameBoard {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(180px, 1fr));
     grid-template-rows: repeat(auto, 1fr);
     gap: 1rem;
 
     place-items: center;
+}
+
+@media (max-width: 1200px) {
+    .gameBoard {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .gameBoard {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
 }
